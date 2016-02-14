@@ -1,0 +1,15 @@
+# For Instagift we need Mysql 5.6 (5.7.x doesn't play nice)
+brew tap homebrew/versions
+brew install mysql56
+
+# For Tmux session switching
+brew install fzf
+
+# For showing battery indicator in Tmux status eine
+brew tap Goles/battery
+brew instiall battery
+
+# Becasuse this is better than top
+brew install htop
+
+
