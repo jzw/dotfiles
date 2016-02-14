@@ -3,6 +3,8 @@ alias stree='reattach-to-user-namespace stree'
 alias open='reattach-to-user-namespace open'
 alias e='subl .'
 alias ll='ls -l'
+alias top='htop'
+
 alias cdig='cd ~/Dropbox/code/instagift'
 
 # homebrew vim
