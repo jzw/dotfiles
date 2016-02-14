@@ -1,0 +1,26 @@
+alias subl='reattach-to-user-namespace subl'
+alias stree='reattach-to-user-namespace stree'
+alias open='reattach-to-user-namespace open'
+alias e='subl .'
+alias ll='ls -l'
+alias cdig='cd ~/Dropbox/code/instagift'
+
+# homebrew vim
+alias vim='/usr/local/bin/vim'
+
+alias cdgf='cd ~/Dropbox/code/gradesfirst'
+alias merge-latest='git fetch --all --tags; git merge $(git tag | gsort -V | tail -1)'
+
+function branch_name() {
+  branch_name="$(git symbolic-ref HEAD 2>/dev/null)"
+  branch_name=${branch_name##refs/heads/}
+  echo $branch_name
+}
+
+function push() {
+  git push origin `branch_name`
+}
+
+function pull() {
+  git pull --rebase origin `branch_name`
+}
