@@ -1,7 +1,8 @@
+unsetopt nomatch
+
 . ~/.aliases
 . ~/.exports
 . ~/.prompt
-unsetopt nomatch
 
 HISTSIZE=10000
 SAVEHIST=10000
@@ -11,6 +12,13 @@ HISTFILE=~/.zsh_history
 
 # vi command line editing
 bindkey -v
+
+bindkey '^P' up-history
+bindkey '^N' down-history
+bindkey '^?' backward-delete-char
+bindkey '^h' backward-delete-char
+bindkey '^w' backward-kill-word
+bindkey '^r' history-incremental-search-backward
 
 # other key bindings
 bindkey '^R' history-incremental-search-backward

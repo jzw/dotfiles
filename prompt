@@ -64,12 +64,23 @@ git_prompt_string() {
   [ -n "$git_where" ] && echo "$GIT_PROMPT_SYMBOL$(parse_git_state)$GIT_PROMPT_PREFIX%{$fg[yellow]%}${git_where#(refs/heads/|tags/)}$GIT_PROMPT_SUFFIX"
 }
 
-# Set the right-hand prompt
-RPS1='$(git_prompt_string)'
-
 function get_pwd() {
   echo "${PWD/$HOME/~}"
 }
 PROMPT='
 $fg[cyan]%n@%m: $fg[yellow]$(get_pwd)
 $reset_color→ '
+
+# Set the right-hand prompt
+function zle-line-init zle-keymap-select {
+  VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
+  RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/}$(git_prompt_string) $EPS1"
+  zle reset-prompt
+}
+RPS1=git_prompt_string
+
+zle -N zle-line-init
+zle -N zle-keymap-select
+export KEYTIMEOUT=1
+
+
