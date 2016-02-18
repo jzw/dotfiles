@@ -35,3 +35,5 @@ bindkey '^R' zaw-history
 
 # zsh syntax highlighting
 . ~/Dropbox/code/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
