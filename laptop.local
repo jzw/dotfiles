@@ -12,4 +12,5 @@ brew instiall battery
 # Becasuse this is better than top
 brew install htop
 
-
+# MongoDB
+brew install mongodb
