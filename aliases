@@ -5,8 +5,6 @@ alias e='subl .'
 alias ll='ls -l'
 alias top='htop'
 
-alias cdig='cd ~/Dropbox/code/instagift'
-
 # homebrew vim
 alias vim='/usr/local/bin/vim'
 
