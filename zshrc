@@ -1,9 +1,5 @@
 unsetopt nomatch
 
-. ~/.aliases
-. ~/.exports
-. ~/.prompt
-
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
@@ -37,3 +33,10 @@ bindkey '^R' zaw-history
 . ~/Dropbox/code/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
+. ~/.aliases
+. ~/.exports
+. ~/.prompt
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

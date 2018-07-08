@@ -1,6 +1,7 @@
 [user]
 	name = Zac Williams
 	email = zac@zacwilliams.com
+	signingkey = C5B2B278
 [diff]
 
 [color]
@@ -62,15 +63,21 @@
     la = !git l --all
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	latest = for-each-ref --count=10 --sort=-committerdate --format='%(committerdate:short) %(refname:short)'
+	pf = push --force-with-lease
 
 [merge]
     tool = vimdiff
 
 [core]
 	editor = vim 
+	excludesfile = ~/.gitignore_global
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
 [rerere]
 	enabled = true
 	autoupdate = true
+[push]
+	default = simple
+[commit]
+	gpgsign = true

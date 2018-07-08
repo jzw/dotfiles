@@ -4,6 +4,7 @@ alias open='reattach-to-user-namespace open'
 alias e='subl .'
 alias ll='ls -l'
 alias top='htop'
+alias be='bundle exec'
 
 # homebrew vim
 alias vim='/usr/local/bin/vim'
