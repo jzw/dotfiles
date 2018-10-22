@@ -68,7 +68,7 @@ function get_pwd() {
   echo "${PWD/$HOME/~}"
 }
 PROMPT='
-$fg[cyan]%n@%m: $fg[yellow]$(get_pwd)
+$fg[yellow]$(get_pwd)
 $reset_color→ '
 
 # Set the right-hand prompt

@@ -16,7 +16,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'moll/vim-node'
 Plugin 'jelera/vim-javascript-syntax'
 
@@ -35,14 +35,15 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 set tabstop=4 softtabstop=0 expandtab shiftwidth=2 smarttab
 
-set colorcolumn=80
+set colorcolumn=100
 set ruler
 
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 syntax enable
-colorscheme Tomorrow-Night-Bright
+"colorscheme Tomorrow-Night-Bright
+colorscheme lucario
 
 highlight clear SignColumn
 let g:airline_powerline_fonts = 1

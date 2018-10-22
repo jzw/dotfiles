@@ -1,7 +1,7 @@
 [user]
 	name = Zac Williams
-	email = zac@zacwilliams.com
-	signingkey = C5B2B278
+	email = zwilliams@eab.com
+	signingkey = D4C1B7125BC4AA3ACB6CAAC02C88089E5B66712A
 [diff]
 
 [color]
@@ -70,7 +70,7 @@
 
 [core]
 	editor = vim 
-	excludesfile = ~/.gitignore_global
+	excludesfile = /Users/williamza/.gitignore_global
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
@@ -81,3 +81,5 @@
 	default = simple
 [commit]
 	gpgsign = true
+[pull]
+	rebase = true
