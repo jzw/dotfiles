@@ -19,6 +19,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'moll/vim-node'
 Plugin 'jelera/vim-javascript-syntax'
+Plugin 'slim-template/vim-slim.git'
 
 call vundle#end()
 filetype plugin indent on
@@ -42,7 +43,7 @@ imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 syntax enable
-colorscheme Tomorrow-Night-Bright
+colorscheme Lucario
 
 highlight clear SignColumn
 let g:airline_powerline_fonts = 1
