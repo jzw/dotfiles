@@ -16,9 +16,7 @@ bindkey '^h' backward-delete-char
 bindkey '^w' backward-kill-word
 bindkey '^r' history-incremental-search-backward
 
-PATH=~/bin:$PATH
-
-PATH=$HOME/local/bin:$PATH
+PATH=/usr/local/bin:~/bin:$HOME/local/bin:$PATH
 
 ### Added by the Heroku Toolbelt
 export PATH=/usr/local/heroku/bin:$PATH

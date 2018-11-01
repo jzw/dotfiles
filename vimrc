@@ -16,11 +16,14 @@ Plugin 'honza/vim-snippets'
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'moll/vim-node'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'slim-template/vim-slim.git'
-
+Plugin 'timakro/vim-searchant'
+Plugin 'junegunn/vim-slash'
+Plugin 'junegunn/fzf', { 'dir': '/usr/local/opt/fzf' }
+Plugin 'tpope/vim-surround'
+" Plugin 'junegunn/goyo.vim'
 call vundle#end()
 filetype plugin indent on
 

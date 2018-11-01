@@ -7,7 +7,7 @@ alias top='htop'
 alias be='bundle exec'
 
 # homebrew vim
-alias vim='/usr/local/bin/vim'
+alias vim='/usr/local/bin/nvim'
 
 alias cdgf='cd ~/Dropbox/code/gradesfirst'
 alias merge-latest='git fetch --all --tags; git merge $(git tag | gsort -V | tail -1)'
