@@ -40,9 +40,6 @@ set tabstop=4 softtabstop=0 expandtab shiftwidth=2 smarttab
 set colorcolumn=80
 set ruler
 
-imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
-let g:ackprg = 'ag --nogroup --nocolor --column'
-
 syntax enable
 colorscheme Lucario
 
@@ -70,3 +67,10 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 au FileType gitcommit set tw=80
+
+" ctrl-p uses ag (silver searcher) for listing files because speed
+let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
+let g:ctrlp_use_caching = 0
+
+" use ag (sliver searcher)
+let g:ackprg = 'ag --nogroup --nocolor --column'
