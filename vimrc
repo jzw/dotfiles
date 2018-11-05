@@ -1,29 +1,27 @@
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
+" basics
 Plugin 'gmarik/Vundle.vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'tomtom/tlib_vim'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'bling/vim-airline'
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-rails'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
-Plugin 'chriskempson/vim-tomorrow-theme'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'moll/vim-node'
+Plugin 'tpope/vim-surround'             " surround all the things
+Plugin 'ctrlpvim/ctrlp.vim'             " fuzzy searching
+Plugin 'mileszs/ack.vim'                " ack functionality
+Plugin 'bling/vim-airline'              " status bar
+Plugin 'christoomey/vim-tmux-navigator' " tmux integration
+Plugin 'timakro/vim-searchant'          " improved search highlighting
+Plugin 'junegunn/vim-slash'             " automatically clears search highlight when cursor is moved
+
+" dev tools;
+Plugin 'tpope/vim-rails'                " rails goodies
+Plugin 'tpope/vim-bundler'              " bundler goodies
+Plugin 'tpope/vim-fugitive'             " git goodies
+Plugin 'airblade/vim-gitgutter'         " git gutter
+
+" syntax highlighting
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'slim-template/vim-slim.git'
-Plugin 'timakro/vim-searchant'
-Plugin 'junegunn/vim-slash'
-Plugin 'junegunn/fzf', { 'dir': '/usr/local/opt/fzf' }
-Plugin 'tpope/vim-surround'
-" Plugin 'junegunn/goyo.vim'
+
+" extras
+Plugin 'junegunn/goyo.vim'              " distraction-free writing
 call vundle#end()
 filetype plugin indent on
 
