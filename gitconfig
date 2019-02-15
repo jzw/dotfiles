@@ -1,7 +1,7 @@
 [user]
 	name = Zac Williams
 	email = zac@zacwilliams.com
-	signkey = DB4D5C396956F080
+	signkey = C5B2B278
 [diff]
 
 [color]
@@ -69,7 +69,7 @@
     tool = vimdiff
 
 [core]
-	editor = vim 
+	editor = vim
 	excludesfile = ~/.gitignore_global
 [filter "media"]
 	clean = git-media-clean %f
