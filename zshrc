@@ -26,6 +26,9 @@ eval "$(rbenv init -)"
 # zaw history
 . ~/Dropbox/code/zaw/zaw.zsh
 bindkey '^R' zaw-history
+zstyle ':filter-select' hist-find-no-dups yes
+zstyle ':filter-select:highlight' matched fg=green,standout
+zstyle ':filter-select' max-lines 15
 
 # zsh syntax highlighting
 . ~/Dropbox/code/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -38,3 +41,6 @@ bindkey '^R' zaw-history
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+export CLICOLOR=1
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
