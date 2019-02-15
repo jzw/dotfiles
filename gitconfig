@@ -1,7 +1,6 @@
 [user]
 	name = Zac Williams
 	email = zac@zacwilliams.com
-	signkey = C5B2B278
 [diff]
 
 [color]
@@ -79,8 +78,6 @@
 	autoupdate = true
 [push]
 	default = simple
-[commit]
-	gpgsign = false
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
