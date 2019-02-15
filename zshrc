@@ -23,9 +23,6 @@ export PATH=/usr/local/heroku/bin:$PATH
 export RAKEOPT="--trace --verbose"
 eval "$(rbenv init -)"
 
-# zaw history
-. ~/Dropbox/code/zaw/zaw.zsh
-bindkey '^R' zaw-history
 zstyle ':filter-select' hist-find-no-dups yes
 zstyle ':filter-select:highlight' matched fg=green,standout
 zstyle ':filter-select' max-lines 15
@@ -44,3 +41,15 @@ export NVM_DIR="$HOME/.nvm"
 
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPTS="--layout=reverse --extended"
+export FZF_DEFAULT_COMMAND='ag -g "" --hidden'
+
+# Auto execute accepted
+fzf-history-widget-accept() {
+  fzf-history-widget
+  zle accept-line
+}
+zle     -N   fzf-history-widget-accept
+bindkey '^R' fzf-history-widget-accept
