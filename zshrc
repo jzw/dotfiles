@@ -24,8 +24,8 @@ export RAKEOPT="--trace --verbose"
 eval "$(rbenv init -)"
 
 # zaw history
-. ~/Dropbox/code/zaw/zaw.zsh
-bindkey '^R' zaw-history
+# . ~/Dropbox/code/zaw/zaw.zsh
+# bindkey '^R' zaw-history
 
 # zsh syntax highlighting
 . ~/Dropbox/code/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -38,3 +38,15 @@ bindkey '^R' zaw-history
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPTS="--layout=reverse --extended"
+export FZF_DEFAULT_COMMAND='ag -g "" --hidden'
+
+# Auto execute accepted
+fzf-history-widget-accept() {
+  fzf-history-widget
+  zle accept-line
+}
+zle     -N   fzf-history-widget-accept
+bindkey '^R' fzf-history-widget-accept
