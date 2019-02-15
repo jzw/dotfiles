@@ -5,6 +5,7 @@ alias e='subl .'
 alias ll='ls -l'
 alias top='htop'
 alias be='bundle exec'
+alias cat='bat'
 
 # homebrew vim
 alias vim='/usr/local/bin/nvim'
