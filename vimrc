@@ -18,6 +18,7 @@ Plugin 'christoomey/vim-tmux-navigator' " tmux integration
 Plugin 'timakro/vim-searchant'          " improved search highlighting
 Plugin 'junegunn/vim-slash'             " automatically clears search highlight when cursor is moved
 Plugin 'junegunn/fzf.vim'
+Plugin 'tpope/vim-commentary'
 
 " dev tools;
 Plugin 'tpope/vim-rails'                " rails goodies
@@ -102,5 +103,9 @@ let g:ctrlp_use_caching = 0
 " use ag (sliver searcher)
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
-
 let g:autotagTagsFile=".git/tags"
+" Disable tmux navigator when zooming the Vim pane
+let g:tmux_navigator_disable_when_zoomed = 1
+
+" enhance % command so it jumps between keyword pairs (def/end, do/end, etc)
+runtime macros/matchit.vim
