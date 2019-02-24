@@ -1,14 +1,23 @@
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=/usr/local/opt/fzf
+
+" Set leader key to spacebar
+:let mapleader = "\<Space>"
+
+" Move between wrapped lines, rather than jumping over wrapped segments
+nmap j gj
+nmap k gk
+
 call vundle#begin()
 " basics
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-surround'             " surround all the things
-Plugin 'ctrlpvim/ctrlp.vim'             " fuzzy searching
 Plugin 'mileszs/ack.vim'                " ack functionality
 Plugin 'bling/vim-airline'              " status bar
 Plugin 'christoomey/vim-tmux-navigator' " tmux integration
 Plugin 'timakro/vim-searchant'          " improved search highlighting
 Plugin 'junegunn/vim-slash'             " automatically clears search highlight when cursor is moved
+Plugin 'junegunn/fzf.vim'
 
 " dev tools;
 Plugin 'tpope/vim-rails'                " rails goodies
@@ -37,8 +46,18 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 set tabstop=4 softtabstop=0 expandtab shiftwidth=2 smarttab
 
-set colorcolumn=80
-set ruler
+" set colorcolumn=80
+" set ruler
+set textwidth=80
+set colorcolumn=+1
+let &colorcolumn="80,".join(range(120,999),",")
+highlight ColorColumn ctermbg=0 guibg=lightgrey
+
+
+" Swap 0 and ^. I tend to want to jump to the first non-whitespace character
+" so make that the easier one to do.
+nnoremap 0 ^
+nnoremap ^ 0
 
 syntax enable
 colorscheme Lucario
@@ -65,6 +84,14 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+set splitright
+
+" Ctrl-t opens fzf file finder
+nnoremap <C-t> :Files<cr>
+
+" Quickly toggle to previous file
+nnoremap <leader><leader> <c-^>
 
 au FileType gitcommit set tw=80
 
