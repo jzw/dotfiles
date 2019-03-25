@@ -53,3 +53,4 @@ fzf-history-widget-accept() {
 }
 zle     -N   fzf-history-widget-accept
 bindkey '^R' fzf-history-widget-accept
+
