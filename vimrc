@@ -61,7 +61,6 @@ nnoremap 0 ^
 nnoremap ^ 0
 
 syntax enable
-colorscheme Lucario
 
 highlight clear SignColumn
 let g:airline_powerline_fonts = 1
