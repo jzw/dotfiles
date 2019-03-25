@@ -24,6 +24,7 @@ Plugin 'tpope/vim-rails'                " rails goodies
 Plugin 'tpope/vim-bundler'              " bundler goodies
 Plugin 'tpope/vim-fugitive'             " git goodies
 Plugin 'airblade/vim-gitgutter'         " git gutter
+Plugin 'craigemery/vim-autotag'         " seamlessly update ctags
 
 " syntax highlighting
 Plugin 'jelera/vim-javascript-syntax'
@@ -101,3 +102,6 @@ let g:ctrlp_use_caching = 0
 
 " use ag (sliver searcher)
 let g:ackprg = 'ag --nogroup --nocolor --column'
+
+
+let g:autotagTagsFile=".git/tags"
