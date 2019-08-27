@@ -26,15 +26,25 @@ Plugin 'tpope/vim-bundler'              " bundler goodies
 Plugin 'tpope/vim-fugitive'             " git goodies
 Plugin 'airblade/vim-gitgutter'         " git gutter
 Plugin 'craigemery/vim-autotag'         " seamlessly update ctags
+Plugin 'Valloric/YouCompleteMe'         " code-completion
 
 " syntax highlighting
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'slim-template/vim-slim.git'
 
-" extras
-Plugin 'junegunn/goyo.vim'              " distraction-free writing
+Plugin 'morhetz/gruvbox'
+
 call vundle#end()
+
+colorscheme gruvbox
+set background=dark
+set cursorline
+
 filetype plugin indent on
+set encoding=utf-8
+
+" use system clipboard
+set clipboard=unnamedplus
 
 set nocompatible
 filetype off
@@ -54,7 +64,6 @@ set textwidth=80
 set colorcolumn=+1
 let &colorcolumn="80,".join(range(120,999),",")
 highlight ColorColumn ctermbg=0 guibg=lightgrey
-
 
 " Swap 0 and ^. I tend to want to jump to the first non-whitespace character
 " so make that the easier one to do.
@@ -97,11 +106,16 @@ nnoremap <leader><leader> <c-^>
 au FileType gitcommit set tw=80
 
 " ctrl-p uses ag (silver searcher) for listing files because speed
-let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
-let g:ctrlp_use_caching = 0
+" let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
+" let g:ctrlp_use_caching = 0
 
+
+" Ack config
 " use ag (sliver searcher)
 let g:ackprg = 'ag --nogroup --nocolor --column'
+" use Ack! so the first result isn't automatically opened
+" shortcut
+nnoremap <Leader>F :Ack!<Space>
 
 let g:autotagTagsFile=".git/tags"
 " Disable tmux navigator when zooming the Vim pane
