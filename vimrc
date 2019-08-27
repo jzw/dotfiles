@@ -109,3 +109,10 @@ let g:tmux_navigator_disable_when_zoomed = 1
 
 " enhance % command so it jumps between keyword pairs (def/end, do/end, etc)
 runtime macros/matchit.vim
+
+" GitGutter Config
+let g:gitgutter_override_sign_column_highlight = 0
+highlight GitGutterAdd    ctermfg=46  ctermbg=NONE guibg=NONE
+highlight GitGutterDelete ctermfg=9   ctermbg=NONE guibg=NONE
+highlight GitGutterChange ctermfg=220 ctermbg=NONE guibg=NONE
+
