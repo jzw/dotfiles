@@ -16,19 +16,20 @@ bindkey '^h' backward-delete-char
 bindkey '^w' backward-kill-word
 bindkey '^r' history-incremental-search-backward
 
-PATH=/usr/local/bin:~/bin:$HOME/local/bin:$PATH
+PATH=/usr/local/sbin:/usr/local/bin:~/bin:$HOME/local/bin:$PATH
 
 ### Added by the Heroku Toolbelt
 export PATH=/usr/local/heroku/bin:$PATH
 export RAKEOPT="--trace --verbose"
 eval "$(rbenv init -)"
+eval "$(nodenv init -)"
 
 zstyle ':filter-select' hist-find-no-dups yes
 zstyle ':filter-select:highlight' matched fg=green,standout
 zstyle ':filter-select' max-lines 15
 
 # zsh syntax highlighting
-. ~/Dropbox/code/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+. ~/code/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 

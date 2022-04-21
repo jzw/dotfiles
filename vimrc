@@ -1,5 +1,9 @@
+set nocompatible
+filetype off
+
 set rtp+=~/.vim/bundle/Vundle.vim
-set rtp+=/usr/local/opt/fzf
+" set rtp+=/usr/local/opt/fzf
+" set rtp+=/Users/zwilliams/.fzf/bin/fzf
 
 " Set leader key to spacebar
 :let mapleader = "\<Space>"
@@ -17,26 +21,36 @@ Plugin 'bling/vim-airline'              " status bar
 Plugin 'christoomey/vim-tmux-navigator' " tmux integration
 Plugin 'timakro/vim-searchant'          " improved search highlighting
 Plugin 'junegunn/vim-slash'             " automatically clears search highlight when cursor is moved
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
 Plugin 'tpope/vim-commentary'
-
+Plugin 'connorholyday/vim-snazzy'
 " dev tools;
 Plugin 'tpope/vim-rails'                " rails goodies
 Plugin 'tpope/vim-bundler'              " bundler goodies
 Plugin 'tpope/vim-fugitive'             " git goodies
 Plugin 'airblade/vim-gitgutter'         " git gutter
 Plugin 'craigemery/vim-autotag'         " seamlessly update ctags
-Plugin 'Valloric/YouCompleteMe'         " code-completion
 
+Plugin 'chemzqm/vim-jsx-improve'
 " syntax highlighting
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'slim-template/vim-slim.git'
 
 Plugin 'morhetz/gruvbox'
+Plugin 'mtth/scratch.vim'
+"Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
+ Plugin 'w0rp/ale'
+Plugin 'alvan/vim-closetag'
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plugin 'junegunn/goyo.vim'
+Plugin 'junegunn/limelight.vim'
 
 call vundle#end()
 
-colorscheme gruvbox
+" colorscheme gruvbox
+colorschem snazzy
 set background=dark
 set cursorline
 
@@ -46,11 +60,8 @@ set encoding=utf-8
 " use system clipboard
 set clipboard=unnamedplus
 
-set nocompatible
-filetype off
-
 " relative number
-set relativenumber
+" set relativenumber
 set number
 
 " remove trailing whitespace on save
@@ -60,10 +71,10 @@ set tabstop=4 softtabstop=0 expandtab shiftwidth=2 smarttab
 
 " set colorcolumn=80
 " set ruler
-set textwidth=80
-set colorcolumn=+1
-let &colorcolumn="80,".join(range(120,999),",")
-highlight ColorColumn ctermbg=0 guibg=lightgrey
+" set textwidth=80
+" set colorcolumn=+1
+" let &colorcolumn="80,".join(range(120,999),",")
+" highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 " Swap 0 and ^. I tend to want to jump to the first non-whitespace character
 " so make that the easier one to do.
@@ -117,7 +128,9 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " shortcut
 nnoremap <Leader>F :Ack!<Space>
 
-let g:autotagTagsFile=".git/tags"
+let g:autotagTagsFile=".tags"
+set tags=.git/tags;/
+
 " Disable tmux navigator when zooming the Vim pane
 let g:tmux_navigator_disable_when_zoomed = 1
 
@@ -130,3 +143,17 @@ highlight GitGutterAdd    ctermfg=46  ctermbg=NONE guibg=NONE
 highlight GitGutterDelete ctermfg=9   ctermbg=NONE guibg=NONE
 highlight GitGutterChange ctermfg=220 ctermbg=NONE guibg=NONE
 
+let g:ale_fixers = {
+ \ 'javascript': ['eslint', 'trim_whitespace'],
+ \ 'typescriptreact': ['eslint', 'trim_whitespace'],
+ \ 'ruby': ['prettier', 'trim_whitespace']
+ \ }
+" let g:ale_sign_error = '❌'
+" let g:ale_sign_warning = '⚠️'
+let g:ale_fix_on_save = 1
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+highlight ALEErrorSign ctermbg=NONE ctermfg=9
+highlight ALEWarningSign ctermbg=NONE ctermfg=220
+
+" command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
