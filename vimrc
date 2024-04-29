@@ -12,42 +12,50 @@ set rtp+=~/.vim/bundle/Vundle.vim
 nmap j gj
 nmap k gk
 
-call vundle#begin()
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+call plug#begin('~/.vim/plugged')
 " basics
-Plugin 'gmarik/Vundle.vim'
-Plugin 'tpope/vim-surround'             " surround all the things
-Plugin 'mileszs/ack.vim'                " ack functionality
-Plugin 'bling/vim-airline'              " status bar
-Plugin 'christoomey/vim-tmux-navigator' " tmux integration
-Plugin 'timakro/vim-searchant'          " improved search highlighting
-Plugin 'junegunn/vim-slash'             " automatically clears search highlight when cursor is moved
-Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plugin 'junegunn/fzf.vim'
-Plugin 'tpope/vim-commentary'
-Plugin 'connorholyday/vim-snazzy'
+" Plug 'gmarik/Vundle.vim
+Plug 'tpope/vim-surround'             " surround all the things
+Plug 'mileszs/ack.vim'                " ack functionality
+Plug 'bling/vim-airline'              " status bar
+Plug 'christoomey/vim-tmux-navigator' " tmux integration
+Plug 'timakro/vim-searchant'          " improved search highlighting
+Plug 'junegunn/vim-slash'             " automatically clears search highlight when cursor is moved
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-commentary'
+Plug 'connorholyday/vim-snazzy'
 " dev tools;
-Plugin 'tpope/vim-rails'                " rails goodies
-Plugin 'tpope/vim-bundler'              " bundler goodies
-Plugin 'tpope/vim-fugitive'             " git goodies
-Plugin 'airblade/vim-gitgutter'         " git gutter
-Plugin 'craigemery/vim-autotag'         " seamlessly update ctags
+Plug 'tpope/vim-rails'                " rails goodies
+Plug 'tpope/vim-bundler'              " bundler goodies
+Plug 'tpope/vim-fugitive'             " git goodies
+Plug 'airblade/vim-gitgutter'         " git gutter
+Plug 'craigemery/vim-autotag'         " seamlessly update ctags
 
-Plugin 'chemzqm/vim-jsx-improve'
+Plug 'chemzqm/vim-jsx-improve'
 " syntax highlighting
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'slim-template/vim-slim.git'
+Plug 'jelera/vim-javascript-syntax'
+ Plug 'slim-template/vim-slim'
+Plug 'kchmck/vim-coffee-script'
 
-Plugin 'morhetz/gruvbox'
-Plugin 'mtth/scratch.vim'
-"Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
- Plugin 'w0rp/ale'
-Plugin 'alvan/vim-closetag'
-Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'morhetz/gruvbox'
+Plug 'mtth/scratch.vim'
+"Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+ Plug 'w0rp/ale'
+Plug 'alvan/vim-closetag'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plugin 'junegunn/goyo.vim'
-Plugin 'junegunn/limelight.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'David-Kunz/jester'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-call vundle#end()
+Plug 'github/copilot.vim'
+call plug#end()
 
 " colorscheme gruvbox
 colorschem snazzy
@@ -129,7 +137,7 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 nnoremap <Leader>F :Ack!<Space>
 
 let g:autotagTagsFile=".tags"
-set tags=.git/tags;/
+set tags=./.tags;$HOME
 
 " Disable tmux navigator when zooming the Vim pane
 let g:tmux_navigator_disable_when_zoomed = 1
@@ -157,3 +165,11 @@ highlight ALEErrorSign ctermbg=NONE ctermfg=9
 highlight ALEWarningSign ctermbg=NONE ctermfg=220
 
 " command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
+
+let g:copilot_node_command = "~/.nodenv/shims/node"
+
+" disable perl support
+let g:loaded_perl_provider = 0
+
+let g:ale_hover_to_preview = 1
+

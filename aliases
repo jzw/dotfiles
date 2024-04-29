@@ -8,7 +8,7 @@ alias be='bundle exec'
 alias cat='bat'
 
 # homebrew vim
-alias vim='/usr/local/bin/nvim'
+alias vim='/opt/homebrew/bin/nvim'
 
 alias cdgf='cd ~/Dropbox/code/gradesfirst'
 alias merge-latest='git fetch --all --tags; git merge $(git tag | gsort -V | tail -1)'

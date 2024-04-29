@@ -55,3 +55,13 @@ fzf-history-widget-accept() {
 zle     -N   fzf-history-widget-accept
 bindkey '^R' fzf-history-widget-accept
 
+export PATH="$HOME/.cargo/bin:$PATH"
+
+export ES_JAVA_HOME="/opt/homebrew/opt/openjdk"
+export PATH="$ES_JAVA_HOME/bin:$PATH"
+
+# Fleetio Stuff
+alias porter-prod='porter --cluster 2652'
+alias porter-stage='porter --cluster 2587'
+
+alias nvim-kickstart='NVIM_APPNAME="nvim-kickstart" nvim'
